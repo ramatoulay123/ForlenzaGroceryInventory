@@ -19,8 +19,12 @@ def remove_item(inventory, item_name):
     inventory (dict): The current inventory
     item_name (str): The name of the item to remove
     """
-    del inventory[item_name]                         
-    print(f"{item_name} removed from the inventory.")  
+    # User error so we have to make sure user is putting the exact value they want to delete
+    try: 
+        del inventory[item_name]                         
+        print(f"{item_name} removed from the inventory.") 
+    except:
+        print("EROR: Put in the correct value ")
 
 def update_quantity(inventory, item_name, new_quantity):         
     """
@@ -31,13 +35,12 @@ def update_quantity(inventory, item_name, new_quantity):
     item_name (str): The name of the item to update
     new_quantity (str): The new quantity of the item
     """
-# I identified the keys such as wheter to put it as a string or integer 
-    inventory [str[item_name]] [int[new_quantity]] == new_quantity   
+# Removed double equal signs to the code
+    inventory [item_name]["quantity"] = new_quantity   
     print(f"{item_name} quantity updated to {new_quantity}.")
 
 def display_inventory(inventory): 
-# the inventory was not printing so I added an inventory so it could print. 
-    print(display_inventory)  
+ 
     """
     Display all items in the inventory.
     
@@ -60,15 +63,17 @@ inventory = {
 
 
 
-
-
+# to show the inventory for each time 
+display_inventory(inventory)  
 while True:
     print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
     choice = input("Enter your choice (1-5): ")
 
     if choice == "1":
         name = input("Enter item name: ")
-        price = input("Enter item price: ")
+        if name in inventory: 
+            continue 
+        price = float(input("Enter item price: ")) 
         quantity = int(input("Enter item quantity: "))
         add_item(inventory, name, price, quantity)
     elif choice == "2":

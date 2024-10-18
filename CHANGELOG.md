@@ -16,7 +16,9 @@
 
 ## version 1.2 
 - 2024-10-17
-- able to display the inventory information 
-- able to say the item you named is added 
+- removed the double equal sign to identify logic error from programer
+- added a display inventory 
+- changed value data to a float 
+- checked if name is in inventory
 
 
