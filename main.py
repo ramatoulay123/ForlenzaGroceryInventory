@@ -19,10 +19,10 @@ def remove_item(inventory, item_name):
     inventory (dict): The current inventory
     item_name (str): The name of the item to remove
     """
-    del inventory[item_name]      
-    print(f"{item_name} removed from the inventory.") 
+    del inventory[item_name]                         
+    print(f"{item_name} removed from the inventory.")  
 
-def update_quantity(inventory, item_name, new_quantity):  
+def update_quantity(inventory, item_name, new_quantity):         
     """
     Update the quantity of an item in the inventory.
     
@@ -31,7 +31,7 @@ def update_quantity(inventory, item_name, new_quantity):
     item_name (str): The name of the item to update
     new_quantity (str): The new quantity of the item
     """
-    # I identified the keys such as wheter to put it as a string or integer 
+# I identified the keys such as wheter to put it as a string or integer 
     inventory [str[item_name]] [int[new_quantity]] == new_quantity   
     print(f"{item_name} quantity updated to {new_quantity}.")
 
@@ -58,6 +58,10 @@ inventory = {
     "banana": {"price": 0.75, "quantity": 150}
 }
 
+
+
+
+
 while True:
     print("\n1. Add item\n2. Remove item\n3. Update quantity\n4. Display inventory\n5. Exit")
     choice = input("Enter your choice (1-5): ")
@@ -74,7 +78,7 @@ while True:
         name = input("Enter item name to update: ")
         quantity = input("Enter new quantity: ")
         update_quantity(inventory, name, quantity)
-        print(update_quantity) 
+       
     elif choice == "4":
         display_inventory(inventory)
     elif choice == "5":

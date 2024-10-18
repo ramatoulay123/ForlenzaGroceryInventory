@@ -14,4 +14,9 @@
   - View the current inventory.
   - Search for items by name.
 
+## version 1.2 
+- 2024-10-17
+- able to display the inventory information 
+- able to say the item you named is added 
+
 
